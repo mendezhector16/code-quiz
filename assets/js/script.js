@@ -49,18 +49,21 @@ var quizQuestion = [{
     d:"console.log",
     correctAnswer: "d"
 }];
-
+// variables that pull from the array above
 var i = 0;
-var lastQuestion = quizQuestion.length
-var points = 0
+var lastQuestion = quizQuestion.length;
 
+//starts quiz once button is clicked
 var startQuiz = function() {
     console.log("start quiz");
 
     displayQuizQuestion();
 
+    //add displayScore() call when you have time
+
 };
 
+//displayQuizQuestion function to hide what is displayed and display the questions and answers
 var displayQuizQuestion = function() {
     introDisplayEl.setAttribute("style", "display:none");
 
@@ -75,12 +78,13 @@ var displayQuizQuestion = function() {
     answerDEl.innerHTML = currentQuestion.d;
 };
 
+//checks if the selected answer is correct and moves on to the next question
 var checkAnswer = function(answer) {
     var correct = quizQuestion[i].correctAnswer;
 
+    //if user is right, display message that tells them
     if (answer === correct && i !== lastQuestion) {
-        // score++;
-        window.alert("you are doing great sweety!");
+        window.alert("You are doing great sweety!");
         i++;
         displayQuizQuestion();
     }
@@ -89,15 +93,7 @@ var checkAnswer = function(answer) {
         i++;
         displayQuizQuestion();
     }
-}
-//append quiz questions
-
-//alert if questions are wrong 
-
-//take time off from timer if questions are wrong
-
-//alert if questionsare right
-
+};
 //timer
 
 //event listener to start the quiz
